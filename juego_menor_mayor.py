@@ -1,7 +1,7 @@
 import random
 
-racha=0
-nombre = input("ingrese el nombre de usuario: ")
+racha = 0
+nombre = input("Ingrese el nombre de usuario: ")
 
 while racha >= 0:
     numero = random.randint(1,1000)

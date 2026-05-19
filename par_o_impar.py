@@ -1,13 +1,13 @@
 import random
 aciertos = 0
-nombre=input("ingrese el nombre de usuario: ")
+nombre = input("ingrese el nombre de usuario: ")
 while aciertos >= 0:
-    numero2=random.randint(1,6)
-    numero1=random.randint(1,6)
+    numero2 = random.randint(1,6)
+    numero1 = random.randint(1,6)
     numero = numero1 + numero2
-    paroimpar= input("¿que numero salio? ").lower()
+    parOimpar= input("¿que numero salio? ").lower()
     if numero % 2 == 0:
-        if paroimpar == "par":
+        if parOimpar == "par":
             print("=================================================")
             print(f"Acertaste {nombre}!!")
             print("=================================================")
@@ -18,7 +18,7 @@ while aciertos >= 0:
             print("=================================================")
             aciertos = -1
     else:
-        if paroimpar == "impar":
+        if parOimpar == "impar":
             print("=================================================")
             print(f"Acertaste {nombre}!!")
             print("=================================================")
