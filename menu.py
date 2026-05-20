@@ -75,7 +75,7 @@ def cartel_construccion():
     input("Presione 'Enter' para retornar al menú principal...")
     limpiar_pantalla()
 
-def juego1():
+def mayor_menor():
     global MayorMenorRacha, cantjugadas_min_menor, nombreJugador
     racha = 0
     nombre = input("Ingrese el nombre de usuario: ")
@@ -118,7 +118,7 @@ def juego1():
                 cantjugadas_min_menor +=1
                 racha = -1
 
-def juego2():
+def numsecreto():
     """
 
     """
@@ -177,7 +177,7 @@ def juego2():
                 gano = 0
         """
 
-def juego4():
+def par_impar():
     global cantjugadas_par_impar, cantvictorias_par_impar, nombreJugador, cantderrotas_par_impar
     aciertos = 0
     nombre = input("ingrese el nombre de usuario: ")
@@ -246,15 +246,15 @@ while opc != 6:
 
     match opc: 
         case 1: 
-            juego1() 
+            mayor_menor() 
             limpiar_pantalla()
         case 2: 
-            juego2() 
+            numsecreto() 
             limpiar_pantalla()
         case 3: 
             cartel_construccion() 
         case 4: 
-            juego4() 
+            par_impar() 
             limpiar_pantalla()
         case 5: 
             reporte() 
