@@ -184,6 +184,9 @@ def par_impar():
         numero1 = random.randint(1,6)
         numero = numero1 + numero2
         parOimpar= input("¿que numero salio? ").lower()
+        if parOimpar != "par" and parOimpar != "impar":
+            while parOimpar != "par" and parOimpar != "impar":
+                parOimpar = input("Ingreso invalido, reintente: ").lower()
         if numero % 2 == 0:
             if parOimpar == "par":
                 print("=================================================")
