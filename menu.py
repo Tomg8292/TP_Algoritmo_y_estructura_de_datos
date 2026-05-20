@@ -10,10 +10,8 @@ import os
 cantjugadas_min_menor = 0
 cantjugadas_num_secreto = 0
 cantjugadas_par_impar = 0
-cantvictorias_min_menor = 0
 cantvictorias_num_secreto = 0
 cantvictorias_par_impar = 0
-cantderrotas_min_menor = 0
 cantderrotas_num_secreto = 0
 cantderrotas_par_impar = 0
 nombreJugador = ""
@@ -223,7 +221,7 @@ def par_impar():
 def reporte():
     print("REPORTE DE JUEGOS")
     print(f"Jugador: {nombreJugador}")
-    print(f"Mayor-Menor: Jugadas: {cantjugadas_min_menor} - Victorias: {cantvictorias_min_menor} - Derrotas: {cantderrotas_min_menor} - Mayor Racha: {MayorMenorRacha}")
+    print(f"Mayor-Menor: Jugadas: {cantjugadas_min_menor} - Mayor Racha: {MayorMenorRacha}")
     print(f"Número Secreto: Jugadas: {cantjugadas_num_secreto} - Victorias: {cantvictorias_num_secreto} - Derrotas: {cantderrotas_num_secreto}")
     print(f"Par o Impar: Jugadas: {cantjugadas_par_impar} - Victorias: {cantvictorias_par_impar} - Derrotas: {cantderrotas_par_impar}")
 
