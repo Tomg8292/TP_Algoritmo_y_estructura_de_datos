@@ -74,10 +74,12 @@ def cartel_construccion():
     limpiar_pantalla()
 
 def mayor_menor():
+    """
+    Variables locales: mayomin: str, numero: int, numeroant: int, racha: int
+    """
     global MayorMenorRacha, cantjugadas_min_menor, nombreJugador
     racha = 0
-    nombre = input("Ingrese el nombre de usuario: ")
-    nombreJugador = nombre
+    nombreJugador = input("Ingrese el nombre de usuario: ")
     while racha >= 0:
         numero = random.randint(1,1000)
         print(numero)
@@ -88,12 +90,12 @@ def mayor_menor():
         if mayomin == "mayor":
             if numero > numeroant:
                 print("=================================================")
-                print(f"El numero es mayor {nombre}, ganaste!!")
+                print(f"El numero es mayor {nombreJugador}, ganaste!!")
                 print("=================================================")
                 racha +=1
             else:
                 print("=================================================")
-                print(f"El numero es menor {nombre}, perdiste!!")
+                print(f"El numero es menor {nombreJugador}, perdiste!!")
                 print(f"Tu racha de victorias fue de {racha}!!")
                 print("=================================================")
                 if racha > MayorMenorRacha:
@@ -103,12 +105,12 @@ def mayor_menor():
         elif mayomin == "menor":
             if numero < numeroant:
                 print("=================================================")
-                print(f"El numero es menor {nombre}, ganaste!!")
+                print(f"El numero es menor {nombreJugador}, ganaste!!")
                 print("=================================================")
                 racha +=1
             else:
                 print("=================================================")
-                print(f"El numero es mayor {nombre}, perdiste!!")
+                print(f"El numero es mayor {nombreJugador}, perdiste!!")
                 print(f"Tu racha de victorias fue de {racha}!!")
                 print("=================================================")
                 if racha > MayorMenorRacha:
@@ -118,7 +120,7 @@ def mayor_menor():
 
 def numsecreto():
     """
-
+    Variables locales: cont: int, gano: int, numero: int, num: int
     """
     global cantjugadas_num_secreto, cantvictorias_num_secreto, nombreJugador, cantderrotas_num_secreto
     cont = 0
@@ -176,6 +178,10 @@ def numsecreto():
         """
 
 def par_impar():
+    """
+    Variables locales: aciertos: int, numero: int, numero1: int, numero2: int, parOimpar: str, nombre: str
+
+    """
     global cantjugadas_par_impar, cantvictorias_par_impar, nombreJugador, cantderrotas_par_impar
     aciertos = 0
     nombre = input("ingrese el nombre de usuario: ")
@@ -222,6 +228,9 @@ def par_impar():
       
 
 def reporte():
+    """
+    Variables locales: ninguna
+    """
     print("REPORTE DE JUEGOS")
     print(f"Jugador: {nombreJugador}")
     print(f"Mayor-Menor: Jugadas: {cantjugadas_min_menor} - Mayor Racha: {MayorMenorRacha}")
