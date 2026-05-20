@@ -7,6 +7,21 @@ opc: int
 import random
 import os
 
+cantjugadas_min_menor = 0
+cantjugadas_num_secreto = 0
+cantjugadas_par_impar = 0
+cantvictorias_min_menor = 0
+cantvictorias_num_secreto = 0
+cantvictorias_par_impar = 0
+cantderrotas_min_menor = 0
+cantderrotas_num_secreto = 0
+cantderrotas_par_impar = 0
+nombreJugador = ""
+MayorMenorRacha = 0
+
+
+
+
 def limpiar_pantalla():
     """
     Variables locales: ninguna
@@ -61,9 +76,10 @@ def cartel_construccion():
     limpiar_pantalla()
 
 def juego1():
+    global MayorMenorRacha, cantjugadas_min_menor, nombreJugador
     racha = 0
     nombre = input("Ingrese el nombre de usuario: ")
-
+    nombreJugador = nombre
     while racha >= 0:
         numero = random.randint(1,1000)
         print(numero)
@@ -82,6 +98,9 @@ def juego1():
                 print(f"El numero es menor {nombre}, perdiste!!")
                 print(f"Tu racha de victorias fue de {racha}!!")
                 print("=================================================")
+                if racha > MayorMenorRacha:
+                    MayorMenorRacha = racha
+                cantjugadas_min_menor +=1
                 racha = -1
         elif mayomin == "menor":
             if numero < numeroant:
@@ -94,22 +113,24 @@ def juego1():
                 print(f"El numero es mayor {nombre}, perdiste!!")
                 print(f"Tu racha de victorias fue de {racha}!!")
                 print("=================================================")
+                if racha > MayorMenorRacha:
+                    MayorMenorRacha = racha
+                cantjugadas_min_menor +=1
                 racha = -1
 
 def juego2():
-    cont = 0
-    max = 6
-    gano = 0
-    contjugadas = 0
-    contvictorias = 0
-    contderrotas = 0
+    """
 
-    nombre = input("Ingrese el nombre de usuario: ")
+    """
+    global cantjugadas_num_secreto, cantvictorias_num_secreto, nombreJugador, cantderrotas_num_secreto
+    cont = 0
+    gano = 0
+
+    nombreJugador= input("Ingrese el nombre de usuario: ")
     numero = random.randint(1,100)
 
     while cont < 6 and gano == 0:
         
-        #print(numero) #
         print("Te quedan ", 6 - cont, " intentos")
         num = int(input("Ingrese un numero: "))
         if num == numero:
@@ -117,7 +138,8 @@ def juego2():
             print("Descubriste el numero!!")
             cont += 1
             gano = 1
-            contvictorias +=1
+            cantvictorias_num_secreto +=1
+            cantjugadas_num_secreto +=1
             print("Descubriste el numero en ", cont, " intentos")
             print("=================================================")
             
@@ -137,14 +159,15 @@ def juego2():
             print("El numero secreto era el ", numero)
             print("=================================================")
             gano = 3
-            contderrotas +=1
+            cantderrotas_num_secreto +=1
+            cantjugadas_num_secreto +=1
 
-
+        """
         if gano == 1 or gano == 3:
-            contjugadas +=1
-            print("cantidad de partidas jugadas: ", contjugadas)
-            print("cantidad de partidas ganadas: ", contvictorias)
-            print("cantidad de partidas perdidas: ", contderrotas)
+            cantjugadas_num_secreto +=1
+            print("cantidad de partidas jugadas: ", cantjugadas_num_secreto)
+            print("cantidad de partidas ganadas: ", cantvictorias_num_secreto)
+            print("cantidad de partidas perdidas: ", cantderrotas_num_secreto)
             retry = input("volver a jugar? ").lower()
             print("=================================================")
 
@@ -152,9 +175,10 @@ def juego2():
                 numero = random.randint(1,100)
                 cont = 0
                 gano = 0
-             
+        """
 
 def juego4():
+    global cantjugadas_par_impar, cantvictorias_par_impar, nombreJugador, cantderrotas_par_impar
     aciertos = 0
     nombre = input("ingrese el nombre de usuario: ")
     while aciertos >= 0:
@@ -168,28 +192,40 @@ def juego4():
                 print(f"Acertaste {nombre}!!")
                 print("=================================================")
                 aciertos +=1
+                cantvictorias_par_impar +=1
+                cantjugadas_par_impar +=1
             else:
                 print("=================================================")
                 print(f"Perdiste {nombre}!!")
                 print("=================================================")
                 aciertos = -1
+                cantderrotas_par_impar +=1
+                cantjugadas_par_impar +=1
         else:
             if parOimpar == "impar":
                 print("=================================================")
                 print(f"Acertaste {nombre}!!")
                 print("=================================================")
                 aciertos +=1
+                cantvictorias_par_impar +=1
+                cantjugadas_par_impar +=1
             else:
                 print("=================================================")
                 print(f"Perdiste {nombre}!!")
                 print("=================================================")
-                aciertos = -1  
+                aciertos = -1
+                cantderrotas_par_impar +=1
+                cantjugadas_par_impar +=1
 
     input("Presione ENTER para continuar...")
       
 
 def reporte():
-    pass 
+    print("REPORTE DE JUEGOS")
+    print(f"Jugador: {nombreJugador}")
+    print(f"Mayor-Menor: Jugadas: {cantjugadas_min_menor} - Victorias: {cantvictorias_min_menor} - Derrotas: {cantderrotas_min_menor} - Mayor Racha: {MayorMenorRacha}")
+    print(f"Número Secreto: Jugadas: {cantjugadas_num_secreto} - Victorias: {cantvictorias_num_secreto} - Derrotas: {cantderrotas_num_secreto}")
+    print(f"Par o Impar: Jugadas: {cantjugadas_par_impar} - Victorias: {cantvictorias_par_impar} - Derrotas: {cantderrotas_par_impar}")
 
 # ==========================================
 # INICIO DEL PROGRAMA PRINCIPAL
