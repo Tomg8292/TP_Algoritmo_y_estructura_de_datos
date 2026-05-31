@@ -143,11 +143,11 @@ def numsecreto():
 
     while cont < 6 and gano == 0:
         print("\nTe quedan ", 6 - cont, " intentos")
-        num = int(input("Ingrese un número (1 al 100): "))
+        num = input("Ingrese un número (1 al 100): ")
         
         # Validamos sin usar métodos de strings prohibidos, controlando los límites del rango
         while num < 1 or num > 100:
-            num = int(input("Número fuera de rango. Reintente (1 al 100): "))
+            num = input("Número fuera de rango. Reintente (1 al 100): ")
             
         if num == numero:
             print("=================================================")
@@ -195,7 +195,7 @@ def par_impar():
         parOimpar = input("\n¿La suma de los dados es par o impar? ").lower()
         
         while parOimpar != "par" and parOimpar != "impar":
-            parOimpar = input("Ingreso invalido, reintente (par/impar): ").lower()
+            parOimpar = input("Ingreso inválido, reintente (par/impar): ").lower()
             
         if numero % 2 == 0:
             if parOimpar == "par":
