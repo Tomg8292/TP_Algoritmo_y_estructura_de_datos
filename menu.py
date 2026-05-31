@@ -1,5 +1,5 @@
 """
-Integrantes:  Alexis Byrne, Tomás García, Dante Lamboglia
+Integrantes:  Alexis Byrne, Tomás García, Dante Lamboglia y Luca Colombo
 Declarativa de Variables utilizadas en el Programa Principal
 opc: str
 """
