@@ -85,15 +85,16 @@ def mayor_menor():
     
     while racha >= 0:
         print(f"\nNúmero actual: {numero}")
-        mayomin = input("¿Cree que el siguiente número es 'Mayor' o 'Menor'? ").lower()
+        mayomin = input("¿Cree que el siguiente número es 'Mayor' o 'Menor'? ")
         
-        while mayomin != "mayor" and mayomin != "menor":
-            mayomin = input("Ingreso inválido. Escriba 'Mayor' o 'Menor': ").lower()
+        while (mayomin != "mayor" and mayomin != "MAYOR" and 
+               mayomin != "menor" and mayomin != "MENOR" and mayomin != "Mayor" and mayomin != "Menor"):
+            mayomin = input("Ingreso inválido. Escriba 'Mayor' o 'Menor': ")
             
         numero_siguiente = random.randint(1, 1000)
         print(f"El siguiente número era: {numero_siguiente}")
         
-        if mayomin == "mayor":
+        if mayomin == "mayor" or mayomin == "MAYOR":
             if numero_siguiente > numero:
                 print("=================================================")
                 print(f"¡Ganaste esta ronda, {nombreJugador}!")
@@ -109,7 +110,7 @@ def mayor_menor():
                     MayorMenorRacha = racha
                 racha = -1
                 
-        elif mayomin == "menor":
+        elif mayomin == "menor" or mayomin == "MENOR":
             if numero_siguiente < numero:
                 print("=================================================")
                 print(f"¡Ganaste esta ronda, {nombreJugador}!")
@@ -145,7 +146,6 @@ def numsecreto():
         print("\nTe quedan ", 6 - cont, " intentos")
         num = int(input("Ingrese un número (1 al 100): "))
         
-        # Validación rústica de rango con while numérico estándar de alumno
         while num < 1 or num > 100:
             num = int(input("Número fuera de rango. Reintente (1 al 100): "))
             
@@ -192,13 +192,14 @@ def par_impar():
         numero1 = random.randint(1, 6)
         numero = numero1 + numero2
         
-        parOimpar = input("\n¿La suma de los dados es par o impar? ").lower()
+        parOimpar = input("\n¿La suma de los dados es par o impar? ")
         
-        while parOimpar != "par" and parOimpar != "impar":
-            parOimpar = input("Ingreso inválido, reintente (par/impar): ").lower()
+        while (parOimpar != "par" and parOimpar != "PAR" and 
+               parOimpar != "impar" and parOimpar != "IMPAR" and parOimpar != "Par" and parOimpar != "Impar"):
+            parOimpar = input("Ingreso inválido, reintente (par/impar): ")
             
         if numero % 2 == 0:
-            if parOimpar == "par":
+            if parOimpar == "par" or parOimpar == "PAR":
                 print("=================================================")
                 print(f"¡Acertaste {nombreJugador}! Salió {numero}.")
                 print("=================================================")
@@ -211,7 +212,7 @@ def par_impar():
                 cantderrotas_par_impar += 1
                 aciertos = -1
         else:
-            if parOimpar == "impar":
+            if parOimpar == "impar" or parOimpar == "IMPAR":
                 print("=================================================")
                 print(f"¡Acertaste {nombreJugador}! Salió {numero}.")
                 print("=================================================")
@@ -251,9 +252,9 @@ while opc != "S":
     MENU() 
     opc = str(input("Ingrese su opcion: "))
 
-    # Copia textual de la estructura lógica que exige la cátedra en el FAQ pág. 3
+
     while (opc < "A" or opc > "E" and opc != "S"): 
-        opc = str(input("Ingreso Invalido - reintente: ")) 
+        opc = str(input("Ingreso Inválido - reintente: ")) 
 
     limpiar_pantalla() 
 
