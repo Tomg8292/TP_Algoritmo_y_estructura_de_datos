@@ -143,33 +143,33 @@ def numsecreto():
 
     while cont < 6 and gano == 0:
         print("\nTe quedan ", 6 - cont, " intentos")
-        num = input("Ingrese un número (1 al 100): ")
+        num = int(input("Ingrese un número (1 al 100): "))
         
-        # Validamos sin usar métodos de strings prohibidos, controlando los límites del rango
+        # Validación rústica de rango con while numérico estándar de alumno
         while num < 1 or num > 100:
-            num = input("Número fuera de rango. Reintente (1 al 100): ")
+            num = int(input("Número fuera de rango. Reintente (1 al 100): "))
             
         if num == numero:
             print("=================================================")
-            print("¡¡Descubriste el numero!!")
+            print("¡¡Descubriste el número!!")
             cont += 1
             gano = 1
             cantvictorias_num_secreto += 1
-            print("Descubriste el numero en ", cont, " intentos")
+            print("Descubriste el número en ", cont, " intentos")
             print("=================================================")
         elif num > numero: 
             print("=================================================")
-            print("El numero secreto es menor")
+            print("El número secreto es menor")
             cont += 1
         else:
             print("=================================================")
-            print("El numero secreto es mayor")
+            print("El número secreto es mayor")
             cont += 1
 
     if gano == 0:
         print("=================================================")
         print("PERDISTE")
-        print("El numero secreto era el ", numero)
+        print("El número secreto era el ", numero)
         print("=================================================")
         cantderrotas_num_secreto += 1
 
@@ -247,14 +247,13 @@ mostrar_advertencia()
 
 opc = "" 
 
-# Se inicia con la letra de control estructural solicitada (S)
 while opc != "S": 
     MENU() 
-    opc = input("\nIngrese su opcion: ").upper()
+    opc = str(input("Ingrese su opcion: "))
 
-    # Validación de rango según plantilla exacta del FAQ de la cátedra
+    # Copia textual de la estructura lógica que exige la cátedra en el FAQ pág. 3
     while (opc < "A" or opc > "E" and opc != "S"): 
-        opc = input("Ingreso Invalido - reintente: ").upper() 
+        opc = str(input("Ingreso Invalido - reintente: ")) 
 
     limpiar_pantalla() 
 
@@ -276,5 +275,5 @@ while opc != "S":
             limpiar_pantalla()
         case "S": 
             print("\nGracias por jugar, no apueste, juega por diversión")
-            print("GRACIAS POR USAR NUESTRO SISTEMA!!!!")
+            print('\n\n GRACIAS POR USAR NUESTRO SISTEMA!!!!')
             input("\nPresione 'Enter' para cerrar el programa...")
