@@ -300,7 +300,7 @@ def jugar_blackjack():
         limpiar_pantalla()
         print("--- BLACKJACK (EL 21) ---")
 
-        # Se arma un mazo único de 52 cartas sin repetición
+        
         mazo = []
         for palo in range(4):
             for valor in range(1, 14):
@@ -308,7 +308,7 @@ def jugar_blackjack():
 
         random.shuffle(mazo)
 
-        # Reparto de 2 cartas iniciales
+        
         cartas_jugador = [mazo.pop(), mazo.pop()]
         cartas_banca = [mazo.pop(), mazo.pop()]
 
@@ -317,13 +317,13 @@ def jugar_blackjack():
         cartas_visuales_banca = [formato_carta(c) for c in cartas_banca]
         
         print(f"\nTus cartas: {cartas_visuales_jugador} (Suma total: {puntos_jugador})")
-        # CORRECCIÓN: Se muestran las 2 cartas de la Banca desde el inicio
+        
         print(f"Cartas de la Banca: {cartas_visuales_banca}")
 
         se_planto = False
         perdio_jugador = False
 
-        # --- TURNO JUGADOR ---
+       
         while not se_planto and not perdio_jugador:
             if puntos_jugador == 21:
                 print("¡Llegaste a 21!")
@@ -349,14 +349,12 @@ def jugar_blackjack():
                 else:
                     se_planto = True
 
-        # --- TURNO BANCA Y RESOLUCIÓN ---
-        # Solo juega la banca si el jugador NO perdió automáticamente por pasarse de 21
         if not perdio_jugador:
             puntos_banca = calcular_puntos(cartas_banca)
             cartas_visuales_banca = [formato_carta(c) for c in cartas_banca]
             print(f"\nTurno de la Banca. Cartas de la Banca: {cartas_visuales_banca} (Suma: {puntos_banca})")
             
-            # La Banca pide mientras tenga menos de 17 puntos
+            
             while puntos_banca < 17:
                 nueva_carta_banca = mazo.pop()
                 cartas_banca.append(nueva_carta_banca)
