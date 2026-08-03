@@ -1,5 +1,6 @@
 """
 Integrantes: Alexis Byrne, Tomás García, Dante Lamboglia y Luca Colombo
+Comisión 103
 ================================================================================
 DECLARACIÓN DE VARIABLES Y ESTRUCTURAS DE DATOS (PROGRAMA PRINCIPAL)
 ================================================================================
