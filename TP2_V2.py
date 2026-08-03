@@ -314,9 +314,11 @@ def jugar_blackjack():
 
         puntos_jugador = calcular_puntos(cartas_jugador)
         cartas_visuales_jugador = [formato_carta(c) for c in cartas_jugador]
+        cartas_visuales_banca = [formato_carta(c) for c in cartas_banca]
         
         print(f"\nTus cartas: {cartas_visuales_jugador} (Suma total: {puntos_jugador})")
-        print(f"Carta visible de la Banca: {formato_carta(cartas_banca[0])}")
+        # CORRECCIÓN: Se muestran las 2 cartas de la Banca desde el inicio
+        print(f"Cartas de la Banca: {cartas_visuales_banca}")
 
         se_planto = False
         perdio_jugador = False
