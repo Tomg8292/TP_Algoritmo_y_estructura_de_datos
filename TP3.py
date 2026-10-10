@@ -1,5 +1,5 @@
 """
-Integrantes: Alexis Byrne, Tomás García, Dante Lamboglia y Luca Colombo
+Integrantes: Alexis Byrne, Tomás García, Dante Lamboglia y Santino Paez
 Comisión 103
 Algoritmos y Estructuras de Datos - UTN FRRO
 Trabajo Práctico Nro. 3 - 2026
