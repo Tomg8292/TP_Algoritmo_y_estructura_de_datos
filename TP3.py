@@ -61,7 +61,7 @@ class Jugador:
 # ==============================================================================
 CLAVE_ADMIN = "admin123"
 
-CARPETA_DATOS = "c:\\tp3\\"
+CARPETA_DATOS = os.path.join(os.path.dirname(__file__), "Datos/")
 if not os.path.exists(CARPETA_DATOS):
     try:
         os.makedirs(CARPETA_DATOS)
